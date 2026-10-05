@@ -18,6 +18,16 @@
 | --- | --- | --- |
 | [`first-principles-learning`](skills/first-principles-learning/) | 通过第一性原理、心智模型、主动练习、苏格拉底式纠错、费曼复述和迁移测试，帮助用户真正理解和掌握复杂主题。 | Stable V1 |
 
+## Agent 指令模板
+
+`agents/` 保存可长期参考、跨项目复用的 Agent 指令模板，供按需读取或合并到目标 Agent 的配置中。
+
+| 模板 | 用途 |
+| --- | --- |
+| [清晰表达与交付](agents/clear-communication.md) | 约束日常技术表达、可视化选择和工程结果说明。 |
+
+根目录的 `AGENTS.md` 只负责本仓库的维护规范；`agents/` 中的模板是供其他 Agent 使用的内容资产，不会由 Skill 安装脚本自动安装。
+
 ## 仓库结构
 
 ```text
@@ -25,6 +35,8 @@ agent-skills/
 ├── README.md
 ├── AGENTS.md
 ├── LICENSE
+├── agents/                 # 可复用 Agent 指令模板
+│   └── clear-communication.md
 ├── skills/
 │   └── <skill-name>/
 │       ├── SKILL.md
@@ -97,7 +109,7 @@ description: 说明该 Skill 的能力、适用场景以及重要的触发边界
 
 ## 范围边界
 
-本仓库只保存可复用的 Agent Skills，明确不包含：
+本仓库保存可复用的 Agent Skills 和 Agent 指令模板，明确不包含：
 
 - Agent 应用源代码；
 - MCP Server 实现；
